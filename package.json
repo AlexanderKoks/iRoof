@@ -7,6 +7,7 @@
     "dev": "ng serve",
     "build": "ng build",
     "build:prod": "ng build --configuration production",
+    "build:github": "ng build --configuration production --base-href=/iRoof/",
     "build:ssr": "ng build --configuration production && ng run roof-measurement-app:server:production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -15,7 +16,8 @@
     "serve:ssr": "node dist/roof-measurement-app/server/server.mjs",
     "serve:ssr:roof-measurement-app": "node dist/roof-measurement-app/server/server.mjs",
     "prestart:prod": "npm run build:ssr",
-    "start:prod": "NODE_ENV=production node dist/roof-measurement-app/server/server.mjs"
+    "start:prod": "NODE_ENV=production node dist/roof-measurement-app/server/server.mjs",
+    "deploy:github": "npm run build:github && npx angular-cli-ghpages --dir=dist/roof-measurement-app/browser"
   },
   "private": true,
   "dependencies": {
@@ -46,6 +48,7 @@
     "@types/jasmine": "~5.1.0",
     "@types/leaflet": "^1.9.17",
     "@types/node": "^18.18.0",
+    "angular-cli-ghpages": "^2.0.3",
     "jasmine-core": "~5.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
