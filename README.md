@@ -1,4 +1,4 @@
-# Roof Measurement App
+# iRoof
 
 A modern Angular application for measuring roof areas using interactive maps and satellite imagery.
 

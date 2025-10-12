@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "roof-measurement-app": {
+    "iRoof": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/roof-measurement-app",
+            "outputPath": "dist/iRoof",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "roof-measurement-app:build:production"
+              "buildTarget": "iRoof:build:production"
             },
             "development": {
-              "buildTarget": "roof-measurement-app:build:development"
+              "buildTarget": "iRoof:build:development"
             }
           },
           "defaultConfiguration": "development"

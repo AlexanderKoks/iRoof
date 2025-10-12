@@ -1,23 +1,23 @@
 {
-  "name": "roof-measurement-app",
+  "name": "iroof",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "dev": "ng serve",
     "build": "ng build",
-    "build:prod": "ng build --configuration production",
+    "build:prod": "ng build --configuration production --base-href=/iRoof/",
     "build:github": "ng build --configuration production --base-href=/iRoof/",
-    "build:ssr": "ng build --configuration production && ng run roof-measurement-app:server:production",
+    "build:ssr": "ng build --configuration production && ng run iRoof:server:production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "test:ci": "ng test --watch=false --browsers=ChromeHeadless --code-coverage",
     "lint": "ng lint",
-    "serve:ssr": "node dist/roof-measurement-app/server/server.mjs",
-    "serve:ssr:roof-measurement-app": "node dist/roof-measurement-app/server/server.mjs",
+    "serve:ssr": "node dist/iRoof/server/server.mjs",
+    "serve:ssr:iRoof": "node dist/iRoof/server/server.mjs",
     "prestart:prod": "npm run build:ssr",
-    "start:prod": "NODE_ENV=production node dist/roof-measurement-app/server/server.mjs",
-    "deploy:github": "npm run build:github && npx angular-cli-ghpages --dir=dist/roof-measurement-app/browser"
+    "start:prod": "NODE_ENV=production node dist/iRoof/server/server.mjs",
+    "deploy:github": "npm run build:github && npx angular-cli-ghpages --dir=dist/iRoof/browser"
   },
   "private": true,
   "dependencies": {

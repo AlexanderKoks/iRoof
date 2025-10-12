@@ -20,5 +20,5 @@ import { RoofMapComponent } from './components/roof-map/roof-map.component';
   `]
 })
 export class AppComponent {
-  title = 'Roof Measurement App';
+  title = 'iRoof';
 }
