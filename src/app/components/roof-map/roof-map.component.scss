@@ -1,0 +1,178 @@
+:host {
+  display: block;
+  height: 100vh;
+}
+
+.map-wrapper {
+  position: relative;
+  height: 100vh;
+
+  #map {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  .controls {
+    position: absolute;
+    top: 10px;
+    left: 50px;
+    z-index: 1000;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    max-width: 100%;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .control-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+
+      label {
+        white-space: nowrap;
+        font-weight: 500;
+      }
+
+      input[type="number"] {
+        width: 70px;
+      }
+
+      button {
+        padding: 5px 10px;
+        font-size: 13px;
+        white-space: nowrap;
+      }
+
+      .search-bar {
+        position: relative;
+        width: 250px;
+
+        input {
+          width: 100%;
+          padding: 6px 8px;
+          border: 1px solid #ccc;
+          border-radius: 6px;
+          font-size: 14px;
+        }
+
+        .autocomplete {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          border: 1px solid #ccc;
+          background: white;
+          max-height: 200px;
+          overflow-y: auto;
+          position: absolute;
+          width: 100%;
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+          z-index: 999;
+
+          li {
+            padding: 6px 10px;
+            cursor: pointer;
+
+            &:hover {
+              background-color: #f0f0f0;
+            }
+          }
+        }
+      }
+    }
+
+    .results {
+      font-size: 13px;
+      line-height: 1.4;
+    }
+  }
+}
+
+.layer-toggle {
+  z-index: 1001;
+  background: white;
+  border-radius: 6px;
+  font-size: 14px;
+  
+  label {
+    display: block;
+    margin-bottom: 4px;
+    cursor: pointer;
+  }
+}
+
+.leaflet-tooltip.edge-label {
+  background: white;
+  border: 1px solid #ccc;
+  font-size: 12px;
+  padding: 2px 4px;
+  border-radius: 4px;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+}
+
+.leaflet-interactive.polygon-hover {
+  cursor: pointer;
+}
+
+.search-bar.fixed-search {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 1100;
+
+  input {
+    width: 280px;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+
+  .autocomplete {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    background: white;
+    max-height: 200px;
+    overflow-y: auto;
+    position: absolute;
+    width: 100%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+    li {
+      padding: 6px 10px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #f0f0f0;
+      }
+    }
+  }
+}
+
+.search-bar button {
+  display: inline-block;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.mode-switch {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  gap: 10px;
+  margin-bottom: 8px;
+
+  input[type="radio"] {
+    margin-right: 4px;
+  }
+}
