@@ -41,8 +41,8 @@ export const ROOF_STRINGS = {
     metersToFeetMultiplier: 3.28084,
     metersToFt2Multiplier: 10.7639,
     ft2ToSquares: 100,
-    defaultZoom: 26,
-    detailZoom: 25,
+    defaultZoom: 22,
+    detailZoom: 22,
     maxPdfZoom: 22,
     mapPadding: 20,
     pdfPadding: 30

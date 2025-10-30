@@ -48,6 +48,9 @@ export interface LeafletMap {
   on(event: string, handler: (e: any) => void): void;
   once(event: string, handler: (e: any) => void): void;
   invalidateSize(pan?: boolean): void;
+  getContainer(): HTMLElement;
+  getBoundsZoom(bounds: any): number;
+  getCenter(): LatLng;
 }
 
 export interface LeafletPolygon {
@@ -63,4 +66,38 @@ export interface LeafletTooltip {
   setLatLng(latlng: [number, number]): LeafletTooltip;
   setContent(content: string): LeafletTooltip;
   addTo(map: LeafletMap): LeafletTooltip;
+}
+
+export interface PitchAngleData {
+  id: string;
+  startPoint: LatLng;
+  endPoint: LatLng;
+  angle: number;
+  label: string;
+}
+
+export interface RoofEdgeData {
+  id: string;
+  startPoint: LatLng;
+  endPoint: LatLng;
+  isEditing: boolean;
+}
+
+export interface EditModeState {
+  isEditing: boolean;
+  isPitchDrawing: boolean;
+  editingVertexIndex: number | null;
+}
+
+export interface LeafletPolyline {
+  addTo(map: LeafletMap): LeafletPolyline;
+  getBounds(): any;
+  setStyle(style: any): void;
+  getLatLngs(): LatLng[];
+}
+
+export interface LeafletCircleMarker {
+  addTo(map: LeafletMap): LeafletCircleMarker;
+  setLatLng(latlng: LatLng): void;
+  on(event: string, handler: (e: any) => void): void;
 }

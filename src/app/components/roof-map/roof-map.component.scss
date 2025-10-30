@@ -48,6 +48,29 @@
         padding: 5px 10px;
         font-size: 13px;
         white-space: nowrap;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        background: #f8f9fa;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+          background: #e9ecef;
+          border-color: #999;
+        }
+
+        &.active {
+          background: #007bff;
+          color: white;
+          border-color: #0056b3;
+        }
+
+        &:disabled {
+          opacity: 0.6;
+          cursor: not-allowed;
+          background: #f8f9fa;
+          color: #6c757d;
+        }
       }
 
       .search-bar {
@@ -116,6 +139,17 @@
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
 
+.leaflet-tooltip.pitch-angle-label {
+  background: rgba(0, 255, 0, 0.9);
+  border: 1px solid #00aa00;
+  color: #000;
+  font-size: 11px;
+  font-weight: bold;
+  padding: 3px 6px;
+  border-radius: 4px;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
+}
+
 .leaflet-interactive.polygon-hover {
   cursor: pointer;
 }
@@ -175,4 +209,49 @@
   input[type="radio"] {
     margin-right: 4px;
   }
+}
+
+.edit-controls {
+  border-top: 1px solid #eee;
+  padding-top: 10px;
+  margin-top: 5px;
+  
+  button {
+    margin-right: 8px;
+    
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+// Leaflet map interaction states
+.leaflet-container {
+  &.pitch-drawing-mode {
+    cursor: crosshair;
+  }
+  
+  &.edit-mode {
+    cursor: move;
+  }
+}
+
+// Vertex marker styling (applied via Leaflet options)
+.vertex-marker {
+  cursor: move !important;
+  
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+// Pitch angle line styling
+.pitch-angle-line {
+  pointer-events: none;
+}
+
+// Loading state
+.controls.loading {
+  opacity: 0.7;
+  pointer-events: none;
 }

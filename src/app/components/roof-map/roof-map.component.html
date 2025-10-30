@@ -9,6 +9,29 @@
         <input id="pitch" type="number" [(ngModel)]="pitchAngle" />
         <button (click)="calculateArea()">Calculate area</button>
         <button (click)="resetCalculation()">Reset calculation</button>
+      </div>
+      
+      <div class="control-row edit-controls">
+        <button 
+          (click)="toggleEditMode()" 
+          [class.active]="editModeState.isEditing"
+          [disabled]="polygonPoints.length === 0">
+          {{ editModeState.isEditing ? 'Exit Edit Mode' : 'Edit Roof Edges' }}
+        </button>
+        <button 
+          (click)="togglePitchDrawingMode()" 
+          [class.active]="editModeState.isPitchDrawing"
+          [disabled]="polygonPoints.length === 0">
+          {{ editModeState.isPitchDrawing ? 'Exit Pitch Drawing' : 'Draw Pitch Angles' }}
+        </button>
+        <button 
+          (click)="clearPitchAngles()"
+          [disabled]="pitchAngles.length === 0">
+          Clear Pitch Angles
+        </button>
+      </div>
+
+      <div class="control-row">
         <button (click)="exportToPDF()">Export to PDF</button>
       </div>
 

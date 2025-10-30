@@ -3,7 +3,7 @@ export const environment = {
   apiUrl: 'http://localhost:4200/api',
   mapbox: {
     accessToken: 'pk.eyJ1IjoiYWxleGtva3MiLCJhIjoiY205b21pbDR6MHZoOTJqcTVlcGl2N29uZCJ9.08PB_5NA_RlGDMoigY66yQ',
-    maxZoom: 21
+    maxZoom: 22
   },
   nominatim: {
     baseUrl: 'https://nominatim.openstreetmap.org/search',

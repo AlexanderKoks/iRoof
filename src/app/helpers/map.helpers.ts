@@ -49,10 +49,14 @@ export function distanceInFeet(p1: any, p2: any, map: any): number {
 /**
  * Returns the appropriate tile layer for the given map type
  * @param type 'satellite' | 'cycle'
+ * @param L Optional Leaflet instance to use instead of importing
  * @returns Promise resolving to Leaflet tile layer
  */
-export async function getTileLayer(type: MapLayerType): Promise<any> {
-  const L = await import('leaflet');
+export async function getTileLayer(type: MapLayerType, L?: any): Promise<any> {
+  if (!L) {
+    const leafletModule = await import('leaflet');
+    L = leafletModule.default || leafletModule;
+  }
 
   switch (type) {
     case 'satellite':
